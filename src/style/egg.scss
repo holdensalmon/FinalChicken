@@ -1,0 +1,55 @@
+
+
+// .main-body {
+//     display: grid;
+//     grid-template-columns: [left-s] 500px [left-e mid-s] 1fr [mid-e right-s] 500px [right-e];
+//     grid-template-rows: repeat(10, 10vh);
+// }
+
+#egg{
+    // position: absolute;
+    // padding-left: 500px;
+    position: absolute;
+    top: 75px;
+    right: 145px;
+    overflow: hidden;
+    transition-duration: 0.8s;
+    transition-property: transform;
+}
+
+#egg:hover {
+    transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+}
+
+.egg-norm{
+
+    width: 200px;
+    height: 110px;
+}
+
+.egg-up {
+    transition: all 2s ease;
+    // transform: scale(1.2);
+    width: 210px;
+    height: 100px;
+
+    overflow: hidden;
+    transition-duration: 0.8s;
+    transition-property: transform;
+
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}
+
+#eggNum {
+    position: absolute;
+    top: 95px;
+    right: 355px;
+}
+
+#cpc {
+    position: absolute;
+    top: 55px;
+    right: 905px;
+}

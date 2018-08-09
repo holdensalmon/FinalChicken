@@ -1,0 +1,57 @@
+
+
+// .main-body {
+//     display: grid;
+//     grid-template-columns: [left-s] 500px [left-e mid-s] 1fr [mid-e right-s] 500px [right-e];
+//     grid-template-rows: repeat(10, 10vh);
+// }
+
+#mutant{
+    // position: absolute;
+    // padding-left: 500px;
+    position: absolute;
+    top: 360px;
+    right: 140px;
+    overflow: hidden;
+    transition-duration: 0.8s;
+    transition-property: transform;
+
+}
+
+#mutant:hover {
+    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+
+}
+
+.mutant-norm{
+
+    width: 240px;
+    height: 150px;
+}
+
+.mutant-up {
+    transition: all 2s ease;
+    // transform: scale(1.2);
+    width: 260px;
+    height: 170px;
+
+    overflow: hidden;
+    transition-duration: 0.8s;
+    transition-property: transform;
+
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}
+
+#mutantNum {
+    position: absolute;
+    top: 395px;
+    right: 385px;
+}
+
+#cpc {
+    position: absolute;
+    top: 55px;
+    right: 905px;
+}

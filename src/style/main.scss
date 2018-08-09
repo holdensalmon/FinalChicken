@@ -1,0 +1,10 @@
+@import 'main-chicken';
+@import 'egg';
+@import 'lamp';
+@import 'mutant';
+
+.main-body {
+    display: grid;
+    grid-template-columns: [left-s] 500px [left-e mid-s] 1fr [mid-e right-s] 500px [right-e];
+    grid-template-rows: repeat(10, 10vh);
+}

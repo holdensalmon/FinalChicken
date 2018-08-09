@@ -1,0 +1,71 @@
+
+#mainChick{
+    // position: absolute;
+    position: absolute;
+    top: 105px;
+    left: 50px;
+}
+
+.size-norm{
+    width: 400px;
+}
+
+.size-up {
+    transition: all .2s ease;
+    width: 450px;
+    transform: scale(1.3)
+}
+
+#clickNum {
+    position: absolute;
+    top: 45px;
+    left: 55px;
+    color: black;
+}
+
+#clickNum, #eggNum, #lampNum, #mutantNum, #cps, #cpc  {
+    /* Chrome, Safari, Opera */
+   -webkit-animation: rainbow 3s infinite; 
+   
+   /* Internet Explorer */
+   -ms-animation: rainbow 3s infinite;
+   
+   /* Standar Syntax */
+   animation: rainbow 3s infinite; 
+ }
+ 
+ /* Chrome, Safari, Opera */
+ @-webkit-keyframes rainbow{
+   0%{color: orange;}	
+   10%{color: purple;}	
+     20%{color: red;}
+     40%{color: yellow;}
+     60%{color: green;}
+     100%{color: blue;}
+     100%{color: orange;}	
+ }
+ /* Internet Explorer */
+ @-ms-keyframes rainbow{
+   0%{color: orange;}	
+   10%{color: purple;}	
+     20%{color: red;}
+     40%{color: yellow;}
+     60%{color: green;}
+     100%{color: blue;}
+     100%{color: orange;}	
+ }
+ 
+ /* Standar Syntax */
+ @keyframes rainbow{
+   0%{color: orange;}	
+   10%{color: purple;}	
+     20%{color: red;}
+     40%{color: yellow;}
+     60%{color: green;}
+     100%{color: blue;}
+     100%{color: orange;}
+ }
+ 
+ body{
+   background-image: url(http://fjordstudio.dk/assets/img/bg/diamonds.png);
+ }
