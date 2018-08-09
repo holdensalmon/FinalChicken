@@ -6,35 +6,33 @@
 //     grid-template-rows: repeat(10, 10vh);
 // }
 
-#mutant{
+#needle{
     // position: absolute;
     // padding-left: 500px;
     position: absolute;
-    top: 360px;
-    right: 140px;
+    top: 555px;
+    right: 145px;
     overflow: hidden;
     transition-duration: 0.8s;
     transition-property: transform;
-
 }
 
-#mutant:hover {
+#needle:hover {
     transform: rotate(15deg);
     -webkit-transform: rotate(15deg);
-
 }
 
-.mutant-norm{
+.needle-norm{
 
     width: 240px;
-    height: 150px;
+    height: 140px;
 }
 
-.mutant-up {
+.needle-up {
     transition: all 2s ease;
     // transform: scale(1.2);
-    width: 260px;
-    height: 170px;
+    width: 250px;
+    height: 150px;
 
     overflow: hidden;
     transition-duration: 0.8s;
@@ -44,14 +42,8 @@
     -webkit-transform: rotate(360deg);
 }
 
-#mutantNum {
+#needleNum {
     position: absolute;
-    top: 395px;
+    top: 585px;
     right: 405px;
-}
-
-#cpc {
-    position: absolute;
-    top: 55px;
-    right: 905px;
 }

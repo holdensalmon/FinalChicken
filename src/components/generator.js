@@ -3,11 +3,13 @@ import chick from './pics/chicken-sprite-main.png';
 import egg from './pics/upgrade1.png';
 import lamp from './pics/heatLamp.png';
 import mutant from './pics/mutant.png';
+import needle from './pics/needle.png';
 import Upgrade1 from './upgrade1';
 
 var eggCost = 100;
 var lampCost = 250;
 var mutantCost = 375;
+var needleCost = 400;
 var totalSeconds = 0;
 
 
@@ -24,7 +26,8 @@ class Generator extends Component {
       chickCount: 0,
       eggCount: 0,
       lampCount: 0,
-      mutantCount: 0
+      mutantCount: 0,
+      needleCount: 0
     };
 
     this.click = this.click.bind(this);
@@ -32,6 +35,8 @@ class Generator extends Component {
     this.lampClick = this.lampClick.bind(this);
     this.mutantClick = this.mutantClick.bind(this);
     this.incrementSeconds = this.incrementSeconds.bind(this);
+    this.needleClick = this.needleClick.bind(this);
+    this.Turn = this.Turn.bind(this);
   }
 
 
@@ -41,6 +46,56 @@ class Generator extends Component {
     this.setState({
       chickCount: this.state.chickCount + 1
     })
+    if (needleCount == 1) {
+      this.setState({
+        chickCount: this.state.chickCount + 3
+      })
+    }
+    if (needleCount == 2) {
+      this.setState({
+        chickCount: this.state.chickCount + 5
+      })
+    }
+    if (needleCount == 3) {
+      this.setState({
+        chickCount: this.state.chickCount + 7
+      })
+    }
+    if (needleCount == 4) {
+      this.setState({
+        chickCount: this.state.chickCount + 9
+      })
+    }
+    if (needleCount == 5) {
+      this.setState({
+        chickCount: this.state.chickCount + 11
+      })
+    }
+    if (needleCount == 6) {
+      this.setState({
+        chickCount: this.state.chickCount + 13
+      })
+    }
+    if (needleCount == 7) {
+      this.setState({
+        chickCount: this.state.chickCount + 15
+      })
+    }
+    if (needleCount == 8) {
+      this.setState({
+        chickCount: this.state.chickCount + 17
+      })
+    }
+    if (needleCount == 9) {
+      this.setState({
+        chickCount: this.state.chickCount + 19
+      })
+    }
+    if (needleCount == 10) {
+      this.setState({
+        chickCount: this.state.chickCount + 21
+      })
+    }
   }
 
 
@@ -134,16 +189,40 @@ class Generator extends Component {
     }
   }
 
+  needleClick() {
+    var needle = document.getElementById("needle");
+    needle.classList.remove("needle-norm");
+    needle.classList.add("needle-up");
+    setTimeout(this.Turn, 30);
+    console.log("needle works");
+
+    if (this.state.chickCount >= needleCost) {
+      setInterval(this.incrementSeconds, 1000);
+
+      this.setState({
+        chickCount: this.state.chickCount - needleCost
+      })
+      this.setState({
+        needleCount: ++this.state.needleCount
+      })
+      needleCost = needleCost * 3;
+      needleCost = Math.ceil(needleCost);
+    }
+  }
+
   Turn() {
     var egg = document.getElementById("egg");
     var lamp = document.getElementById("lamp");
     var mutant = document.getElementById("mutant");
+    var needle = document.getElementById("needle");
     egg.classList.remove("egg-up");
     egg.classList.add("egg-norm");
     lamp.classList.remove("lamp-up");
     lamp.classList.add("lamp-norm");
     mutant.classList.remove("mutant-up");
     mutant.classList.add("mutant-norm");
+    needle.classList.remove("needle-up");
+    needle.classList.add("needle-norm");
   }
 
   render() {
@@ -153,7 +232,8 @@ class Generator extends Component {
         <p id="clickNum">You currently have {this.state.chickCount} chickens. <br/> Click on me so I can lay more!</p>
         <p id="eggNum">You currently have {this.state.eggCount} max egg+, another will cost {eggCost}. <br/>Increase the amount of eggs your chick lays per click</p>
         <p id="lampNum">You currently have {this.state.lampCount} lamps, another will cost {lampCost}. <br/> Lamps will increase your chickens mood, <br/> making it lay eggs without having to click</p>
-        <p id="mutantNum">You currently have {this.state.mutantCount} mutants, another will cost {mutantCost}. <br/> This gives your chicken the chance to lay a mutant egg, <br/> Mutant chickens are worth two chicks in one! </p>
+        <p id="mutantNum">You currently have {this.state.mutantCount} mutants, another will cost {mutantCost}. <br/> This gives your chicken the chance to lay a mutant egg, <br/> Mutant chickens are worth multiple chicks in one! Max of 5. </p>
+        <p id="needleNum">You currently have {this.state.needleCount} genetic modifications, another will cost {needleCost}. <br/> This gives your chicken ultra genes <br/> that cause them to lay many eggs every second! Max of 10.</p>
         <img id="mainChick"
           className="size-norm"
           onClick={this.click}
@@ -175,6 +255,12 @@ class Generator extends Component {
           className="mutant-norm"
           onClick={this.mutantClick}
           src={mutant}
+        />
+        <img
+          id="needle"
+          className="needle-norm"
+          onClick={this.needleClick}
+          src={needle}
         />
         <p id="cpc">You get {this.state.lampCount} chickens a second</p>
         <p id="cps">You get {this.state.eggCount + 1} chickens per click</p>
